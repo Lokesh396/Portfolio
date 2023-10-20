@@ -2,16 +2,21 @@ import NavBar from "./pages/NavBar";
 import Header from "./pages/Header";
 import { Outlet } from "react-router-dom";
 import Profile from "./pages/Profile";
+import About from "./pages/About";
 function Home() {
   return (
     <>
       <Header></Header>
       <div className="d-flex gap-3">
           <Profile></Profile>
-        <div className="d-felx gap-3">
+          <div>
+          <div className="d-flex justify-content-end">
         <NavBar></NavBar>
-          <Outlet/>
         </div>
+          <Outlet/>
+          <About></About>
+          </div>
+       
       </div>
     </>
   );

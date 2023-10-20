@@ -6,8 +6,6 @@ import Resume from './components/pages/Resume'
 import Work from './components/pages/Work'
 import Contact from './components/pages/Contact'
 function App() {
-
-
   return (
     <>
     <BrowserRouter>
