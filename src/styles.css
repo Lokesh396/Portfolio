@@ -109,6 +109,7 @@ body {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 24px;
 }
 
 .contact-card p {
@@ -122,3 +123,18 @@ body {
     color:#848483 ;
 }
 
+.about-page{
+  background-color: white;
+  padding: 12px 36px;
+}
+
+.about-page p{
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.about-card{
+  background-color: #FFEBD1;
+  border-radius: 12px;
+  padding: 12px;
+}
