@@ -8,7 +8,7 @@ function NavBar() {
   return (
     <>
       <div>
-        <div className="d-flex gap-3 card-effect justify-content-end mt-3 ">
+        <div className="d-flex gap-3 card-effect mt-3 ">
           <NavLink
             to="/about"
             className={`icon  ${activeLink === "home" ? "active" : null}`}

@@ -20,7 +20,9 @@ body {
   text-decoration: none;
   color: #000;
 }
-
+.d-flex1{
+  display: flex;
+}
 .icon:hover {
   cursor: pointer;
   background-color: #e1e8effb;
@@ -137,4 +139,130 @@ body {
   background-color: #FFEBD1;
   border-radius: 12px;
   padding: 12px;
+}
+
+.resume-card{
+  background-color: white;
+  margin-top: 12px;
+  bottom: 12px;
+  padding: 30px 120px;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.resume-card .d-flex{
+  column-gap: 100px;
+}
+
+.w-100{
+  width: 100%;
+}
+
+.resume-card1{
+  background-color: #FFE3BF;
+  border-radius: 12px;
+  padding:24px 12px;
+  
+}
+
+.resume-card1 p{
+  margin: 0;
+}
+
+.resume-card2{
+  background-color: #FFEED9;
+  border-radius: 12px;
+  padding: 24px 12px;
+}
+.resume-card2 p{
+  margin: 0;
+}
+
+.skill-page{
+  padding: 30px 120px; 
+  column-gap: 100px;
+}
+
+.skill-icon{
+  border-radius: 8px;
+  background-color:#e1e8efe7 ;
+  padding: 12px 24px;
+}
+
+.form-submit {
+  border-image: linear-gradient(to right, #ff9c1a, #ec1b09);
+  border-image-slice: 5; /* Adjust this value as needed */
+  border-radius: 24px;
+  padding: 6px 18px;
+}
+
+.contact-page{
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px 60px;
+}
+
+.contact-form{
+  background-color: #F8FBFB;
+  padding: 12px 24px;
+  border-radius: 12px;
+}
+.contact-form p{
+  line-height: 30px;
+}
+.contact-info{
+  line-height: 30px;
+  background-color:#F8FBFB ;
+  border-radius: 12px;
+  padding: 6px 12px;
+}
+
+.error-message{
+  margin: 0;
+  color: rgba(250, 45, 45, 0.822);
+  font-size: 12px;
+}
+
+@media (max-width: 400px) {
+  .d-flex1 {
+    flex-direction: column;
+  }
+  .resume-card .d-flex{
+    flex-direction: column;
+  }
+body{
+  width: 100%;
+}
+.resume-card{
+  padding: 12px 12px;
+  column-gap: 10px;
+}
+.icon{
+  width: 60px;
+  height: 60px;
+}
+.navbar{
+  justify-content: center !important ;
+}
+.about-flex{
+  flex-direction: column;
+}
+.skill-page{
+  flex-direction: column;
+  padding: 12px;
+}
+.contact-form{
+  margin: 10px;
+  padding: 10px;
+}
+.contact-page{
+  padding: 10px;
+}
+}
+
+@media (max-width: 1000px) {
+  body{
+    width: 100%;
+    margin: 12px 12px;
+  }
 }

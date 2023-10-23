@@ -3,7 +3,7 @@ import FullStackImg from "../../assets/images/full-stack-24.png";
 
 function About() {
   return (
-    <div className=" about-page mt-3 rounded">
+    <div className="about-page mt-3 rounded">
       <h1>ABOUT ME</h1>
 
       <p className="my-3 fw-medium">
@@ -15,7 +15,7 @@ function About() {
         the industry.
       </p>
       <h1>What I do!</h1>
-      <div className="d-flex gap-3 justify-content-between mt-3">
+      <div className="d-flex about-flex gap-3  mt-3">
         <div className="about-card">
           <h3>
             <img
@@ -25,10 +25,16 @@ function About() {
             Web Development
           </h3>
           <p>
-            As a developer, I find myself most captivated by the power and
-            flexibility of NEXT.js. I am always eager to dive into new projects
-            that leverage NEXT.js and discover innovative ways to create fast,
-            scalable, and user-friendly applications.
+            As a web developer, I&#39;m deeply passionate about harnessing the
+            potential of React.js to build dynamic, high-performance
+            applications. I enthusiastically explore opportunities to employ
+            React.js, constantly seeking novel approaches to craft responsive,
+            scalable, and user-centric software solutions. <br /> Additionally, my
+            expertise extends to Node.js and Express.js, and I possess a wealth
+            of experience working with diverse databases, including MongoDB,
+            MySQL, and PostgreSQL. This well-rounded skill set allows me to
+            design and develop robust backend systems, ensuring the seamless
+            operation of web applications.
           </p>
         </div>
         <div className="about-card">
@@ -40,10 +46,7 @@ function About() {
             Python Programming
           </h3>
           <p>
-            As a developer, I find myself most captivated by the power and
-            flexibility of NEXT.js. I am always eager to dive into new projects
-            that leverage NEXT.js and discover innovative ways to create fast,
-            scalable, and user-friendly applications.
+          I have a strong foundation in Python and leverage this knowledge for contributions to open-source projects on GitHub, problem-solving on platforms like LeetCode, and tackling algorithmic challenges. <br /> Furthermore, I possess experience in utilizing Python for machine learning tasks, and during my time at university, I successfully completed two substantial projects, showcasing my proficiency with the language. These experiences have enriched my skills and broadened my expertise in Python development.
           </p>
         </div>
       </div>
