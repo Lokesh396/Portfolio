@@ -1,39 +1,23 @@
 import * as Lucide from "lucide-react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 function NavBar() {
-  const location = useLocation();
-
-  const activeLink = location.pathname.split("/").pop();
-
   return (
     <>
       <div>
         <div className="d-flex gap-3 card-effect mt-3 ">
-          <NavLink
-            to="/about"
-            className={`icon  ${activeLink === "home" ? "active" : null}`}
-          >
+          <NavLink to="/about" className="icon">
             <Lucide.HomeIcon></Lucide.HomeIcon>
             <p>Home</p>
           </NavLink>
-          <NavLink
-            to="/resume"
-            className={`icon  ${activeLink === "resume" ? "active" : null}`}
-          >
+          <NavLink to="/resume" className="icon">
             <Lucide.FileTextIcon></Lucide.FileTextIcon>
             <p>Resume</p>
           </NavLink>
-          <NavLink
-            to="/work"
-            className={`icon  ${activeLink === "work" ? "active" : null}`}
-          >
+          <NavLink to="/work" className="icon">
             <Lucide.BriefcaseIcon></Lucide.BriefcaseIcon>
             <p>Work</p>
           </NavLink>
-          <NavLink
-            to="/contact"
-            className={`icon  ${activeLink === "contact" ? "active" : null}`}
-          >
+          <NavLink to="/contact" className="icon">
             <Lucide.ContactIcon></Lucide.ContactIcon>
             <p>Contact</p>
           </NavLink>

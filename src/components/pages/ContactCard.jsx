@@ -2,6 +2,7 @@ import * as Lucide from "lucide-react";
 import GmailLogo from "../../assets/images/gmail-logo.png";
 import LocationImg from "../../assets/images/location.png";
 import SmartPhoneImg from "../../assets/images/smartphone.png";
+import { Link } from "react-router-dom";
 function ContactCard() {
   return (
     <div className="contact-card mt-3 pb-2 ">
@@ -27,12 +28,17 @@ function ContactCard() {
         </div>
       </div>
       <div className="py-3 d-flex justify-content-center">
-        <button className="btn btn-bg">
+        <Link
+          to="/CLokeshKumarReddy_Resume.pdf"
+          target="_blank"
+          download
+          className="btn btn-bg"
+        >
           <div className="d-flex justify-content align-items gap-2">
             <Lucide.DownloadIcon></Lucide.DownloadIcon>
             Download Resume
           </div>
-        </button>
+        </Link>
       </div>
     </div>
   );
