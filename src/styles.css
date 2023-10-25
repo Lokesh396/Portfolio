@@ -132,6 +132,10 @@ h1,h2,h4,h5,h6, h3{
     color:#848483 ;
 }
 
+.text-success{
+  color: rgba(86, 150, 86, 0.788);
+}
+
 .about-page{
   background-color: white;
   padding: 12px 36px;
@@ -230,13 +234,36 @@ h1,h2,h4,h5,h6, h3{
   font-size: 12px;
 }
 
-@media (max-width: 400px) {
+.work-page{
+  padding:12px 36px ;
+  background-color: white;
+  border-radius: 12px;
+}
+
+a{
+  text-decoration: none;
+  color: #57657A;
+}
+li{
+  list-style: none;
+}
+
+.active-link{
+  border-bottom: 3px solid #ff9c1a ;
+}
+
+.work-page li:hover{
+  border-bottom: 3px solid #ff9c1a ;
+}
+
+@media (max-width: 412px) {
   .d-flex1 {
     flex-direction: column;
   }
   .resume-card .d-flex{
     flex-direction: column;
   }
+
 body{
   width: 100%;
 }
@@ -251,6 +278,12 @@ body{
 .navbar{
   justify-content: center !important ;
 }
+.navbar{
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
 .about-flex{
   flex-direction: column;
 }
@@ -271,5 +304,11 @@ body{
   body{
     width: 100%;
     margin: 12px 12px;
+  }
+  .profile-width {
+    min-width: 40%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px 0px;
   }
 }

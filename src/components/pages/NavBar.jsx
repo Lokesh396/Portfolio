@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <>
-      <div>
+      <div className="">
         <div className="d-flex gap-3 card-effect mt-3 ">
           <NavLink to="/about" className="icon">
             <Lucide.HomeIcon></Lucide.HomeIcon>

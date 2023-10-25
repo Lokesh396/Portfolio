@@ -24,6 +24,7 @@ const API = async ({
   };
 
   //REQUEST
+  console.log(axiosRequestObject)
   try {
     let request = await axios.request(axiosRequestObject);
     return request.data;

@@ -1,14 +1,38 @@
 import { useForm } from "react-hook-form";
+import api from "../../services/api";
+import { useState } from "react";
 
 function Contact() {
+
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState(false)
+  const [clicked, setClicked] = useState(false)
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = async(data)=>{
-    console.log(data)
+    setClicked(true)
+    let res = await api({
+      url:"/contact",
+      headers:{'Content-Type': 'application/json'},
+      method:'POST',
+      responseType:'JSON',
+      data
+    })
+    let response = JSON.parse(res)
+    if(response.code === 200){
+      setSuccess(true)
+      setClicked(false)
+      reset()
+    }
+    else{
+      setClicked(false)
+      setError(true)
+    }
   }
   return (
     <div className="contact-page">
@@ -53,10 +77,17 @@ function Contact() {
           />
              {errors?.message && <p className="error-message">Please, Enter your message</p>}
         </div>
-        <button className="form-submit" type="submit">
-          Submit
-        </button>
+        <button className="form-submit" type="submit" disabled = {clicked}>
+ 
+  {clicked ?  <><span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span><span>submitting</span></> : "Submit"}
+</button>
       </form>
+      {
+        success && <p className="text-success">Your message reached &#x2713;</p>
+      }
+      {
+        error && <p className="error-message">Please Try again!</p>
+      }
     </div>
     </div>
    
