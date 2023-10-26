@@ -2,6 +2,7 @@ import NavBar from "./pages/NavBar";
 import Header from "./pages/Header";
 import { Outlet, useNavigate } from "react-router-dom";
 import Profile from "./pages/Profile";
+import Footer from "./pages/Footer";
 // import About from "./pages/About";
 // import Resume from "./pages/Resume";
 // import Contact from "./pages/Contact";
@@ -27,6 +28,7 @@ function Home() {
           {/* <Contact></Contact> */}
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 }

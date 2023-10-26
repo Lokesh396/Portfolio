@@ -249,11 +249,41 @@ li{
 }
 
 .active-link{
-  border-bottom: 3px solid #ff9c1a ;
+  border-bottom: 2px solid #ff9c1a ;
 }
 
 .work-page li:hover{
-  border-bottom: 3px solid #ff9c1a ;
+  border-bottom: 2px solid #ff9c1a ;
+}
+
+.link-navigate{
+  text-decoration: underline;
+  color: rgba(0, 0, 254, 0.75);
+}
+
+.work-image2{
+  background-color:#FFEED9 ;
+  padding:12px 12px;
+}
+
+.image2{
+  width: 300px;
+}
+.src-button{
+  background-color:#f0f7ffef ;
+  border-radius: 4px;
+  padding: 8px 16px;
+  border:none ;
+  transition: all 0.2s;
+  border-color: 3px solid #fff;
+}
+
+.src-button:hover{
+   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); ;
+}
+
+.work-page .image-col{
+  column-gap: 100px;
 }
 
 @media (max-width: 412px) {
@@ -297,6 +327,15 @@ body{
 }
 .contact-page{
   padding: 10px;
+}
+.work-page{
+  margin: 0;
+  margin-top: 12px;
+  padding: 4px 4px;
+}
+.image-col{
+  display: flex;
+  flex-direction: column;
 }
 }
 
