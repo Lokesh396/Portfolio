@@ -11,8 +11,8 @@ function Profile() {
           src={ProfilePhoto}
           alt="Profile-Photo"
         />
-        <h3 className="my-3">C Lokesh Kumar Reddy</h3>
-        <h5 className="text-color my-3">Full Stack Developer</h5>
+        <h5 className="my-3">C Lokesh Kumar Reddy</h5>
+        <h6 className="text-color mb-3">Full Stack Developer</h6>
       </div>
 
       <SocialMedia></SocialMedia>

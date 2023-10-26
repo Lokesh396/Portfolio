@@ -8,7 +8,7 @@ function Header() {
   // };
   return (
     <div className="d-flex justify-content-between mt-3">
-      <h1 className="logo">C Lokesh Kumar Reddy</h1>
+      <h3 className="logo">C Lokesh Kumar Reddy</h3>
       {/* <div onClick={handleMode} className="mode">{
         mode === "moon" ? <Lucide.MoonIcon></Lucide.MoonIcon> : <Lucide.SunIcon></Lucide.SunIcon>}</div> */}
     </div>

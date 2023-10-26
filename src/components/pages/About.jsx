@@ -4,7 +4,7 @@ import FullStackImg from "../../assets/images/full-stack-24.png";
 function About() {
   return (
     <div className="about-page mt-3 rounded">
-      <h1>ABOUT ME</h1>
+      <h3>ABOUT ME</h3>
 
       <p className="my-3 fw-medium">
         Hello there! I am thrilled to welcome you to my portfolio. I am a
@@ -14,16 +14,16 @@ function About() {
         constantly strive to enhance my skills and embrace emerging trends in
         the industry.
       </p>
-      <h1>What I do!</h1>
+      <h3>What I do!</h3>
       <div className="d-flex about-flex gap-3  mt-3">
         <div className="about-card">
-          <h3>
+          <h5>
             <img
               style={{ width: "24px", height: "24px" }}
               src={FullStackImg}
             ></img>{" "}
             Web Development
-          </h3>
+          </h5>
           <p>
             As a web developer, I&#39;m deeply passionate about harnessing the
             potential of React.js to build dynamic, high-performance
@@ -38,13 +38,13 @@ function About() {
           </p>
         </div>
         <div className="about-card">
-          <h3>
+          <h5>
             <img
               style={{ width: "24px", height: "24px" }}
               src={PythonIcon}
             ></img>{" "}
             Python Programming
-          </h3>
+          </h5>
           <p>
           I have a strong foundation in Python and leverage this knowledge for contributions to open-source projects on GitHub, problem-solving on platforms like LeetCode, and tackling algorithmic challenges. <br /> Furthermore, I possess experience in utilizing Python for machine learning tasks, and during my time at university, I successfully completed two substantial projects, showcasing my proficiency with the language. These experiences have enriched my skills and broadened my expertise in Python development.
           </p>

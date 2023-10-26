@@ -22,7 +22,10 @@ function Home() {
           <div className=" navbar d-flex justify-content-end">
             <NavBar></NavBar>
           </div>
+          <div className="overflow-auto">
+
           <Outlet />
+          </div>
           {/* <Resume></Resume> */}
           {/* <About></About> */}
           {/* <Contact></Contact> */}

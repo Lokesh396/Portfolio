@@ -1,18 +1,18 @@
 import * as Lucide from "lucide-react";
 import GmailLogo from "../../assets/images/gmail-logo.png";
 import LocationImg from "../../assets/images/location.png";
-import SmartPhoneImg from "../../assets/images/smartphone.png";
+// import SmartPhoneImg from "../../assets/images/smartphone.png";
 import { Link } from "react-router-dom";
 function ContactCard() {
   return (
     <div className="contact-card mt-3 pb-2 ">
-      <div className="d-flex  align-items-center  gap-3  py-3 contact-icon">
+      {/* <div className="d-flex  align-items-center  gap-3  py-3 contact-icon">
         <img src={SmartPhoneImg} alt="SmartPhone" />
         <div>
           <p className="text-color">Phone</p>
           <p>+919502921597</p>
         </div>
-      </div>
+      </div> */}
       <div className="d-flex  align-items-center  gap-3  py-3 contact-icon">
         <img src={GmailLogo} alt="Gmail" />
         <div>

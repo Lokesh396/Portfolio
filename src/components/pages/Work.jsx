@@ -52,7 +52,7 @@ function Work() {
               </button>
             </div>
           </div>
-          <div className="work-image2 rounded my-3">
+          <div className="work-image1 rounded my-3">
             <img className="image2" src={movieImg} alt="face-recogntion" />
             <p className="text-color my-1">Machine Learning</p>
             <h6>Movie Recommendation System</h6>
@@ -71,7 +71,7 @@ function Work() {
           </div>
         </div>
         <div>
-          <div className="work-image2 rounded">
+          <div className="work-image1 rounded">
             <img className="image2" src={CloneImg} alt="face-recogntion" />
             <p className="text-color my-1">Web Development</p>
             <h6>Youtube Clone</h6>

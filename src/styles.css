@@ -7,6 +7,8 @@ body {
   margin-right: auto;
   background-color: #f2f5f9;
   font-family: Raleway, Arial, Helvetica, sans-serif;
+  max-height: 100vh;
+  font-size: 14px;
 }
 h1,h2,h4,h5,h6, h3{
   font-family: Poppins, Arial, Helvetica, sans-serif;
@@ -84,14 +86,15 @@ h1,h2,h4,h5,h6, h3{
   background-color: #ffffff;
   border-radius: 12px;
   padding: 24px 0px;
+  height: fit-content;
 }
 
 .social-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   border-radius: 12px;
   background-color: #e1e8efe7;
   transition: all 0.2s;
@@ -106,6 +109,7 @@ h1,h2,h4,h5,h6, h3{
   background: linear-gradient(to right, #ff9c1a, #ec1b09);
   border-radius: 24px;
   padding: 12px 12px;
+  font-size: small;
   color: white;
 }
 .btn-bg:hover {
@@ -156,9 +160,8 @@ h1,h2,h4,h5,h6, h3{
   background-color: white;
   margin-top: 12px;
   bottom: 12px;
-  padding: 30px 120px;
   border-radius: 12px;
-  width: 100%;
+  padding: 12px 36px;
 }
 
 .resume-card .d-flex{
@@ -190,7 +193,7 @@ h1,h2,h4,h5,h6, h3{
 }
 
 .skill-page{
-  padding: 30px 120px; 
+  padding: 12px 36px; 
   column-gap: 100px;
 }
 
@@ -240,6 +243,12 @@ h1,h2,h4,h5,h6, h3{
   border-radius: 12px;
 }
 
+.overflow-auto{
+  overflow-y: auto;
+  height: 36vw;
+}
+
+
 a{
   text-decoration: none;
   color: #57657A;
@@ -265,8 +274,11 @@ li{
   background-color:#FFEED9 ;
   padding:12px 12px;
 }
-
-.image2{
+.work-image1{
+  background-color:#FFE3BF ;
+  padding:12px 12px;
+}
+.image2 {
   width: 300px;
 }
 .src-button{
@@ -283,11 +295,11 @@ li{
 }
 
 .work-page .image-col{
-  column-gap: 100px;
+  column-gap: 48px;
   width: fit-content;
 }
 
-@media (max-width: 412px) {
+@media (max-width: 440px) {
   .d-flex1 {
     flex-direction: column;
   }
@@ -312,6 +324,7 @@ body{
 .navbar{
   position: sticky;
   top: 0;
+  padding-top: 0px;
   background-color: white;
 }
 
@@ -325,6 +338,9 @@ body{
 .contact-form{
   margin: 10px;
   padding: 10px;
+}
+.overflow-auto{
+  height: 100%;
 }
 .contact-page{
   padding: 10px;
