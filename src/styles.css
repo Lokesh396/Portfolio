@@ -284,6 +284,7 @@ li{
 
 .work-page .image-col{
   column-gap: 100px;
+  width: fit-content;
 }
 
 @media (max-width: 412px) {
