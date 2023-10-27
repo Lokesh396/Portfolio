@@ -299,7 +299,7 @@ li{
   width: fit-content;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 720px) {
   .d-flex1 {
     flex-direction: column;
   }
@@ -366,5 +366,9 @@ body{
     background-color: #ffffff;
     border-radius: 12px;
     padding: 24px 0px;
+  }
+
+  .overflow-auto{
+    height: auto;
   }
 }
