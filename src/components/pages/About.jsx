@@ -29,12 +29,12 @@ function About() {
             potential of React.js to build dynamic, high-performance
             applications. I enthusiastically explore opportunities to employ
             React.js, constantly seeking novel approaches to craft responsive,
-            scalable, and user-centric software solutions. <br /> Additionally, my
-            expertise extends to Node.js and Express.js, and I possess a wealth
-            of experience working with diverse databases, including MongoDB,
-            MySQL, and PostgreSQL. This well-rounded skill set allows me to
-            design and develop robust backend systems, ensuring the seamless
-            operation of web applications.
+            scalable, and user-centric software solutions. <br /> Additionally,
+            my expertise extends to Node.js and Express.js, and I possess a
+            wealth of experience working with diverse databases, including
+            MongoDB, MySQL, and PostgreSQL. This well-rounded skill set allows
+            me to design and develop robust backend systems, ensuring the
+            seamless operation of web applications.
           </p>
         </div>
         <div className="about-card">
@@ -46,7 +46,14 @@ function About() {
             Python Programming
           </h5>
           <p>
-          I have a strong foundation in Python and leverage this knowledge for contributions to open-source projects on GitHub, problem-solving on platforms like LeetCode, and tackling algorithmic challenges. <br /> Furthermore, I possess experience in utilizing Python for machine learning tasks, and during my time at university, I successfully completed two substantial projects, showcasing my proficiency with the language. These experiences have enriched my skills and broadened my expertise in Python development.
+            I have a strong foundation in Python and leverage this knowledge for
+            contributions to open-source projects on GitHub, problem-solving on
+            platforms like LeetCode, and tackling algorithmic challenges. <br />{" "}
+            Furthermore, I possess experience in utilizing Python for machine
+            learning tasks, and during my time at university, I successfully
+            completed two substantial projects, showcasing my proficiency with
+            the language. These experiences have enriched my skills and
+            broadened my expertise in Python development.
           </p>
         </div>
       </div>

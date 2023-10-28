@@ -356,7 +356,7 @@ body{
 }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1020px) {
   body{
     width: 100%;
     margin: 12px 12px;
@@ -367,8 +367,26 @@ body{
     border-radius: 12px;
     padding: 24px 0px;
   }
-
+  .work-page{
+    margin: 0;
+    margin-top: 12px;
+    padding: 4px 4px;
+  }
+  .image-col{
+    display: flex;
+    flex-direction: column;
+  }
   .overflow-auto{
     height: auto;
+  }
+  .skill-page{
+    flex-direction: column;
+    padding: 12px;
+  }
+  .about-flex{
+    flex-direction: column;
+  }
+  .resume-card .d-flex{
+    flex-direction: column;
   }
 }

@@ -1,18 +1,19 @@
-import { useState } from "react";
+// import { useState } from "react";
 import FaceImg from "../../assets/images/face.png";
 import movieImg from "../../assets/images/movie1.png";
 import CloneImg from "../../assets/images/clone.png";
 function Work() {
-  const [item, setItem] = useState("all");
+  // const [item, setItem] = useState("all");
 
   const handleNavigate = (url) => {
     window.open(url, "_blank");
   };
+
   return (
     <div className="work-page">
       <div className=" d-flex1 justify-content-between">
         <h3>Portfolio</h3>
-        <ul className="d-flex gap-3 fw-semibold">
+        {/* <ul className="d-flex gap-3 fw-semibold">
           <li
             onClick={() => setItem("all")}
             className={item === "all" && "active-link"}
@@ -31,7 +32,7 @@ function Work() {
           >
             <a href="#">Python</a>
           </li>
-        </ul>
+        </ul> */}
       </div>
       <div className="d-flex image-col gap-10 mx-auto">
         <div>
@@ -84,14 +85,6 @@ function Work() {
               >
                 Source Code
               </button>
-            </div>
-          </div>
-          <div className="work-image2 rounded my-3">
-            <img className="image2" src={movieImg} alt="face-recogntion" />
-            <p className="text-color my-1">Machine Learning</p>
-            <h6>Movie Recommendation System</h6>
-            <div className="d-flex justify-content-center">
-              <button className="src-button">Source Code</button>
             </div>
           </div>
         </div>
