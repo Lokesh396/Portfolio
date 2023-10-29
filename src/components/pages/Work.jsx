@@ -89,9 +89,14 @@ function Work() {
             </div>
           </div>
           <div className="work-image2 rounded  my-3">
-            <img className="image2" src={DsaImg} alt="face-recogntion" />
+            <img
+              className="image2"
+              style={{ height: "168.5px" }}
+              src={DsaImg}
+              alt="face-recogntion"
+            />
             <p className="text-color my-1">Python</p>
-            <h6>Data Structures and Algorithmse</h6>
+            <h6>Data Structures and Algorithms</h6>
             <div className="d-flex justify-content-center">
               <button
                 onClick={() =>
