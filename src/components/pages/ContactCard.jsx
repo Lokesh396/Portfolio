@@ -35,7 +35,7 @@ function ContactCard() {
           className="btn btn-bg"
         >
           <div className="d-flex justify-content align-items gap-2">
-            <Lucide.DownloadIcon></Lucide.DownloadIcon>
+            <Lucide.DownloadIcon size={16}></Lucide.DownloadIcon>
             Download Resume
           </div>
         </Link>
