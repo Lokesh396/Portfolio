@@ -2,6 +2,7 @@
 import FaceImg from "../../assets/images/face.png";
 import movieImg from "../../assets/images/movie1.png";
 import CloneImg from "../../assets/images/clone.png";
+import DsaImg from "../../assets/images/dsa-python.png";
 function Work() {
   // const [item, setItem] = useState("all");
 
@@ -80,6 +81,21 @@ function Work() {
               <button
                 onClick={() =>
                   handleNavigate("https://github.com/Lokesh396/youtube-clone")
+                }
+                className="src-button"
+              >
+                Source Code
+              </button>
+            </div>
+          </div>
+          <div className="work-image2 rounded  my-3">
+            <img className="image2" src={DsaImg} alt="face-recogntion" />
+            <p className="text-color my-1">Python</p>
+            <h6>Data Structures and Algorithmse</h6>
+            <div className="d-flex justify-content-center">
+              <button
+                onClick={() =>
+                  handleNavigate("https://github.com/Lokesh396/DSA-Python")
                 }
                 className="src-button"
               >
