@@ -16,6 +16,7 @@ function App() {
             <Route path="work" element={<Work />}></Route>
             <Route path="contact" element={<Contact />}></Route>
           </Route>
+          <Route path="*" element={<Home></Home>}></Route>
         </Routes>
       </BrowserRouter>
     </>
