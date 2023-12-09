@@ -52,7 +52,7 @@ function Contact() {
             <input
               type="text"
               className="form-control"
-              placeholder="C Lokesh Kumar Reddy"
+              placeholder=""
               {...register("name", { required: true })}
             />
             {errors?.name && (
@@ -64,7 +64,7 @@ function Contact() {
             <input
               type="email"
               className="form-control"
-              placeholder="lokeshkumareddy.c@gmail.com"
+              placeholder=""
               {...register("email", { required: true })}
             />
             {errors?.email && (
