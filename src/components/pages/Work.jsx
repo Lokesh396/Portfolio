@@ -13,7 +13,7 @@ function Work() {
   return (
     <div className="work-page">
       <div className=" d-flex1 justify-content-between">
-        <h3>Portfolio</h3>
+        <h3 className="px-3">Portfolio</h3>
         {/* <ul className="d-flex gap-3 fw-semibold">
           <li
             onClick={() => setItem("all")}

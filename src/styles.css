@@ -79,6 +79,7 @@ h1,h2,h4,h5,h6, h3{
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  padding-left: 24px;
 }
 
 .profile-width {
@@ -86,7 +87,7 @@ h1,h2,h4,h5,h6, h3{
   background-color: #ffffff;
   border-radius: 12px;
   padding: 24px 0px;
-  height: fit-content;
+  height: auto;
 }
 
 .social-icon {
@@ -213,12 +214,12 @@ h1,h2,h4,h5,h6, h3{
 .contact-page{
   background-color: white;
   border-radius: 12px;
-  padding: 24px 60px;
+  padding: 24px 36px;
+  margin-top: 12px;
 }
 
 .contact-form{
   background-color: #F8FBFB;
-  padding: 12px 24px;
   border-radius: 12px;
 }
 .contact-form p{
@@ -228,7 +229,6 @@ h1,h2,h4,h5,h6, h3{
   line-height: 30px;
   background-color:#F8FBFB ;
   border-radius: 12px;
-  padding: 6px 12px;
 }
 
 .error-message{
@@ -245,7 +245,7 @@ h1,h2,h4,h5,h6, h3{
 
 .overflow-auto{
   overflow-y: auto;
-  height: 70vh;
+  height: 75vh;
 }
 
 
@@ -300,6 +300,9 @@ li{
 }
 
 @media (max-width: 720px) {
+  .logo{
+    text-align: center;
+  }
   .d-flex1 {
     flex-direction: column;
   }
@@ -311,7 +314,7 @@ body{
   width: 100%;
 }
 .resume-card{
-  padding: 12px 12px;
+  padding: 12px 24px;
   column-gap: 10px;
 }
 .icon{
@@ -333,17 +336,19 @@ body{
 }
 .skill-page{
   flex-direction: column;
-  padding: 12px;
+  padding: 12px 24px;
 }
 .contact-form{
-  margin: 10px;
-  padding: 10px;
+  padding: 0.5rem;
+}
+.contact-info{
+  padding: 0.5rem;
 }
 .overflow-auto{
   height: 100%;
 }
 .contact-page{
-  padding: 10px;
+  padding: 12px 24px;
 }
 .work-page{
   margin: 0;
@@ -356,10 +361,9 @@ body{
 }
 }
 
-@media (max-width: 1020px) {
+@media (min-width:721px) and (max-width: 1020px) {
   body{
     width: 100%;
-    margin: 12px 12px;
   }
   .profile-width {
     min-width: 40%;
@@ -381,7 +385,7 @@ body{
   }
   .skill-page{
     flex-direction: column;
-    padding: 12px;
+    padding: 12px 24px;
   }
   .about-flex{
     flex-direction: column;
