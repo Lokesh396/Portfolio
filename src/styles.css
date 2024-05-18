@@ -195,8 +195,12 @@ h1,h2,h4,h5,h6, h3{
 
 .skill-page{
   padding: 12px 36px; 
-  column-gap: 100px;
 }
+
+.w-half{
+  width: 50%;
+}
+
 
 .skill-icon{
   border-radius: 8px;
@@ -338,6 +342,9 @@ body{
   flex-direction: column;
   padding: 12px 24px;
 }
+.w-half{
+  width: 100%;
+}
 .contact-form{
   padding: 0.5rem;
 }
@@ -386,6 +393,9 @@ body{
   .skill-page{
     flex-direction: column;
     padding: 12px 24px;
+  }
+  .w-half{
+    width: 100%;
   }
   .about-flex{
     flex-direction: column;

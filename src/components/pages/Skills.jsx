@@ -1,7 +1,7 @@
 function Skills() {
   return (
     <div className="skill-page d-flex">
-      <div>
+      <div className="w-half">
         <h3>Work Skills</h3>
         <div className="d-flex gap-3 mb-2 flex-wrap">
           <span className="skill-icon">React</span>
@@ -20,7 +20,7 @@ function Skills() {
           <span className="skill-icon">Postgresql</span>
         </div>
       </div>
-      <div>
+      <div className="w-half">
         <h3>Soft Skills</h3>
         <div className="d-flex gap-3 mb-2 flex-wrap">
           <span className="skill-icon">Time Management</span>
