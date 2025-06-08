@@ -12,7 +12,7 @@ export const projectsObj = [
         id:2,
         project_name:"Way2Locations",
         company:"Way2news",
-        description:"Built and scaled a full-fledged ad management system (like GAM) using Kafka, React, and PostgreSQL to handle millions of daily impressions. Developed real-time dashboards, automated WhatsApp reporting (via Gupshup API), and integrated 2FA with OTP and browser fingerprinting. Enabled role-based access, performance tracking, and revenue analytics for brands and sales teams. Delivered tools like market share trackers to drive data-informed decisions.",
+        description:"Built and scaled a full-fledged ad management system (like GAM) using Kafka, React, and PostgreSQL to handle millions of daily impressions. Developed real-time dashboards, automated WhatsApp reporting (via Gupshup API), and integrated 2FA with OTP and browser fingerprinting.",
         homepage:"",
         technologies:['JavaScript', 'Node.JS', 'Reactjs','MYSQL','MongoDB']
     },
@@ -37,7 +37,7 @@ export const experienceObj = [
         technologies:['JavaScript', 'Node.JS', 'Reactjs','PostgreSQL','MongoDB', 'Redis','Kafka']
     },
     {
-        id:1,
+        id:2,
         position:"Software Engineer Trainee",
         start_end:"OCT 2022 - JUN 2023",
         company:"Way2news",
@@ -48,7 +48,7 @@ export const experienceObj = [
 ]
 
 export const heroName = 'C Lokesh Kumar Reddy'
-export const heroposition = 'Full Stack Developer (Mern)'
+export const heroposition = 'Full Stack Developer (MERN)'
 export const heroTagLine = `I build fast, modern, and scalable web apps. Bringing ideas to life through clean code and good design.`
 
 export const projectsArchive = [

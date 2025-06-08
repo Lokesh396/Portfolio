@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 
 const CursorGradient = () => {
-  const [position, setPosition] = useState({ x: -9999, y: -9999 });
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const updatePosition = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    const moveHandler = (e) => {
+      setPosition({ x: e.pageX, y: e.pageY }); // use pageX/pageY for scrolling page
     };
-    window.addEventListener("mousemove", updatePosition);
-    return () => window.removeEventListener("mousemove", updatePosition);
+
+    document.addEventListener('mousemove', moveHandler);
+
+    return () => {
+      document.removeEventListener('mousemove', moveHandler);
+    };
   }, []);
 
   return (

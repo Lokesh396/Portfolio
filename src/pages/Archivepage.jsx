@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { LuArrowLeft } from "react-icons/lu";
-import Button from "../Components/Common/Button";
+import Pill from "../Components/Common/Pill";
 import { FaGithub } from "react-icons/fa";
 import { LuArrowUpRight } from "react-icons/lu";
 import { heroName, projectsArchive } from "../Components/utils/data";
@@ -11,7 +11,7 @@ const Archivepage = () => {
     window.document.title = `Archive | ${heroName}`;
   }, []);
   return (
-    <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-16">
+    <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:py-24">
       <NavLink to="/" className="text-teal-300 group flex items-center mb-5">
         {" "}
         <span className="group-hover:translate-x-[-4px]">
@@ -59,7 +59,7 @@ const Archivepage = () => {
               <td className="hidden md:table-cell">
                 <ul className="flex flex-wrap gap-2">
                   {project.technologies?.map((tech, idx) => (
-                    <Button key={idx} content={tech} />
+                    <Pill key={idx} content={tech} />
                   ))}
                 </ul>
               </td>

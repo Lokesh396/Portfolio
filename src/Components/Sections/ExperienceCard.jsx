@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Common/Button";
+import Pill from "../Common/Pill";
 import { LuArrowUpRight } from "react-icons/lu";
 const ExperienceCard = ({ experience }) => {
   return (
@@ -15,7 +15,7 @@ const ExperienceCard = ({ experience }) => {
         <p className="text-gray-300 text-sm text-justify">{experience.description}</p>
         <ul className="flex flex-wrap gap-2 mt-2">
           {experience.technologies?.map((tech, idx) => (
-            <Button key={idx} content={tech} />
+            <Pill key={idx} content={tech} />
           ))}
         </ul>
       </div>

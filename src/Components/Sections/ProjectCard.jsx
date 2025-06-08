@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Common/Button";
+import Pill from "../Common/Pill";
 import { LuArrowUpRight } from "react-icons/lu";
 const ProjectCard = ({ project }) => {
   return (
@@ -15,7 +15,7 @@ const ProjectCard = ({ project }) => {
         <p className="text-gray-300 text-sm text-justify">{project.description}</p>
         <ul className="flex flex-wrap gap-2 mt-2">
           {project.technologies?.map((tech, idx) => (
-            <Button key={idx} content={tech} />
+            <Pill key={idx} content={tech} />
           ))}
         </ul>
       </div>

@@ -1,19 +1,17 @@
-import React,{useRef, useEffect} from 'react'
-import Header from '../Components/Layout/Header'
-import Body from '../Components/Layout/Body'
-import { heroName } from '../Components/utils/data';
+import React from "react";
+import { ActiveSectionProvider } from "../Components/context/ActiveSectionContext";
+import Header from "../Components/Layout/Header";
+import Body from "../Components/Layout/Body";
 
 const Home = () => {
-  const mainRef = useRef(null);
-  useEffect(() => {
-    window.document.title = heroName;
-  }, []);
   return (
-    <div className='lg:flex lg:gap-4 lg:justify-between mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-16'>
-        <Header ref={mainRef}/>
-        <Body ref={mainRef} />
-    </div>
-  )
-}
+    <ActiveSectionProvider>
+      <div className="lg:flex lg:gap-4 lg:justify-between mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:pt-24">
+        <Header />
+        <Body className="md:w-[52%]" />
+      </div>
+    </ActiveSectionProvider>
+  );
+};
 
-export default Home
+export default Home;

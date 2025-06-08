@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Common/Button";
+import Pill from "../Common/Pill";
 import { LuArrowUpRight } from "react-icons/lu";
 const CertificationCard = ({ certification }) => {
   return (
