@@ -5,7 +5,7 @@ const ProjectCard = ({ project }) => {
   return (
     <div className="group grid grid-cols-1 md:grid-cols-4 gap-4 py-6 px-2 border-gray-700 hover:bg-teal-200/10 rounded-md cursor-pointer">
       {/* Timeline */}
-      <img src='https://images.pexels.com/photos/276267/pexels-photo-276267.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' className="mt-2" alt="project" />
+      <img src={project.image} className="mt-2" alt="project" />
 
       {/* Details */}
       <div className="md:col-span-3 flex flex-col gap-2">

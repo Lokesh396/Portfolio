@@ -4,6 +4,7 @@ const RoutesObj = [
   { id: 1, name: "ABOUT", target: "#about" },
   { id: 2, name: "EXPERIENCE", target: "#experience" },
   { id: 3, name: "PROJECTS", target: "#projects" },
+  { id: 4, name: "CERTIFICATIONS", target: "#certifications"}
 ];
 
 const NavBar = ({mainRef}) => {

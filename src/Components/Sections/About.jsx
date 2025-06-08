@@ -6,6 +6,7 @@ const About = () => {
       id="about"
       className="text-slate-300 text-center md:text-left lg:mb-16"
     >
+      <h5 className='text-left py-4 sticky top-0 bg-slate-900 text-xl font-semibold md:hidden'>ABOUT</h5>
       <p className="leading-relaxed mb-4 text-justify">
         I'm , a
         software development engineer who loves building impactful products that
