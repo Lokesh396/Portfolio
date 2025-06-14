@@ -6,7 +6,7 @@ import Contact from './Contact'
 const Header = ({scrollRef}) => {
   return (
     <div
-      className="md:h-[calc(100vh-160px)] w-full md:w-[48%] flex flex-col justify-between md:sticky md:top-16 lg:top-24 z-10 overflow-y-auto mb-20 lg:mb-0"
+      className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24"
     >
       <div className="flex flex-col gap-4">
         <Hero />

@@ -6,8 +6,8 @@ import { projectsObj } from '../utils/data';
 
 const Projects = () => {
   return (
-   <section id='projects' className='lg:mb-16'>
-      <h5 className='text-left py-4 sticky top-0 bg-slate-900 text-xl font-semibold md:hidden text-white'>PROJECTS</h5>
+   <section id='projects' className='mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24'>
+            <h5 className='text-left mb-2 py-4 sticky top-0 bg-slate-900 text-white text-base font-semibold lg:hidden'>PROJECTS</h5>
     {projectsObj.map((project) => <ProjectCard key={project.id} project={project}/>)}
 
     <NavLink to='/archive' className='hover:text-teal-400 text-white flex gap-1 items-center cursor-pointer mt-5'>View Full Projects Archive <span>{<LuArrowUpRight />}</span></NavLink>

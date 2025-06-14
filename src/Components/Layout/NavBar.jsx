@@ -12,13 +12,20 @@ const NavBar = () => {
   const { activeSection } = useActiveSection();
 
   return (
-    <nav className="hidden md:block">
+    <nav className="hidden lg:block">
       <ul className="list-none flex flex-col gap-3">
         {RoutesObj.map(({ id, name, target }) => {
           const isActive = activeSection === target;
           return (
             <li key={id}>
               <a
+               onClick={(e) => {
+                e.preventDefault();
+                const element = document.querySelector(target);
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
                 href={target}
                 className={`group flex items-center gap-4 cursor-pointer text-sm transition-all duration-300 hover:text-white ${
                   isActive ? "text-white" : "text-slate-400"

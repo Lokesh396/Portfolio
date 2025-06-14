@@ -12,7 +12,7 @@ const Archivepage = () => {
   }, []);
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:py-24">
-      <NavLink to="/" className="text-teal-300 group flex items-center mb-5">
+      <NavLink to="/" className="text-teal-300 group flex items-center mb-5 sticky top-0 bg-slate-900 py-3">
         {" "}
         <span className="group-hover:translate-x-[-4px]">
           <LuArrowLeft />
@@ -28,8 +28,8 @@ const Archivepage = () => {
             <th>Year</th>
             <th className="hidden md:table-cell">Project</th>
             <th className="md:hidden">Project</th>
-            <th className="hidden md:table-cell">Made at</th>
-            <th className="hidden md:table-cell">Built with</th>
+            <th className="hidden lg:table-cell">Made at</th>
+            <th className="hidden lg:table-cell">Built with</th>
             <th className="hidden md:table-cell">Link</th>
           </tr>
         </thead>
@@ -53,10 +53,10 @@ const Archivepage = () => {
                     <LuArrowUpRight />
                 </Link>
               </td>
-              <td className="text-slate-400 hidden md:table-cell">
+              <td className="text-slate-400 hidden lg:table-cell">
                 {project.company}
               </td>
-              <td className="hidden md:table-cell">
+              <td className="hidden lg:table-cell">
                 <ul className="flex flex-wrap gap-2">
                   {project.technologies?.map((tech, idx) => (
                     <Pill key={idx} content={tech} />

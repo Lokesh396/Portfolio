@@ -15,7 +15,7 @@ const LinkText = ({ link, text }) => {
 
 const Footer = () => {
   return (
-    <p className="text-sm text-slate-400 text-justify px-2 max-w-md">
+    <p className="text-sm text-slate-400 text-justify px-2 max-w-md lg:max-w-lg">
       Coded in{" "}
       <LinkText
         link={"https://code.visualstudio.com/"}

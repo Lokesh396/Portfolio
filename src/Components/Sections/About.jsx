@@ -4,31 +4,18 @@ const About = () => {
   return (
     <section
       id="about"
-      className="text-slate-300 text-center md:text-left lg:mb-16"
+      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24 text-slate-300"
     >
-      <h5 className='text-left py-4 sticky top-0 bg-slate-900 text-xl font-semibold md:hidden'>ABOUT</h5>
+      <h5 className='text-left mb-2 py-4 sticky top-0 bg-slate-900 text-white text-base font-semibold lg:hidden'>ABOUT</h5>
       <p className="leading-relaxed mb-4 text-justify">
-        I'm , a
-        software development engineer who loves building impactful products that
-        scale. I specialize in full-stack web development and have hands-on
-        experience with scalable systems, ad tech infrastructure, and automation
-        tools.
+        I'm Lokesh, a software engineer focused on building scalable and impactful web platforms. I specialize in full-stack development and have hands-on experience with ad tech infrastructure, automation systems, and performance monitoring tools.
       </p>
       <p className="leading-relaxed mb-4 text-justify">
-        Recently, I built a YouTube automation system that organically hit
-        <span className="font-semibold text-indigo-400"> 60k+ views in 10 days</span>.
-        I'm also building a smart ad delivery alert system that monitors anomalies across ad networks
-        using ClickHouse, PostgreSQL, and Node.js.
+        Recently, I built a fully automated YouTube Shorts generation system that organically reached
+        <span className="font-semibold text-indigo-400"> 60K+ views in just 10 days</span>
       </p>
       <p className="leading-relaxed mb-4 text-justify">
-        I'm not just about code — I'm about solving the right problems, shipping
-        fast, and learning relentlessly. I take pride in writing clean, maintainable
-        code and designing systems with clarity and purpose.
-      </p>
-      <p className="leading-relaxed text-justify">
-        I'm currently preparing for SDE roles at top product companies. If you're
-        building something exciting or looking for someone who gets things done
-        — let's talk.
+        I’m driven by solving real problems, shipping fast, and writing clean, maintainable code. Whether it’s designing backend architecture, optimizing frontend performance, or integrating third-party APIs — I aim for clarity, efficiency, and impact.
       </p>
     </section>
   )

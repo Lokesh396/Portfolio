@@ -1,9 +1,11 @@
 import React from "react";
 import Pill from "../Common/Pill";
 import { LuArrowUpRight } from "react-icons/lu";
+import useRedirect from "../utils/useRedirect";
 const ExperienceCard = ({ experience }) => {
+  const redirectTo = useRedirect()
   return (
-    <div className="group grid grid-cols-1 md:grid-cols-4 gap-4 py-6 px-2 border-gray-700 hover:bg-teal-200/10 rounded-md cursor-pointer">
+    <div className="group grid grid-cols-1 md:grid-cols-4 gap-4 py-6 px-2 border-gray-700 hover:bg-teal-200/10 rounded-md cursor-pointer" onClick={()=> redirectTo(experience.homepage)}>
       {/* Timeline */}
       <div className="text-sm text-gray-400 mt-1">{experience.start_end}</div>
 

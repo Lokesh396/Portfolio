@@ -39,7 +39,7 @@ const Body = () => {
     };
   }, [setActiveSection]);
   return (
-    <div ref={ref} className="md:w-[52%] scroll-smooth ">
+    <div ref={ref} className="lg:w-[52%] w-full scroll-smooth pt-24 lg:py-24">
     <About />
     <Experience />
     <Projects />
