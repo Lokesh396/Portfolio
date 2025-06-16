@@ -1,8 +1,15 @@
 import React from 'react'
 import { FaGithub,FaLinkedin,FaInstagram,FaTwitterSquare } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 
 const socialObj = [
+  {
+    id:5,
+    icon:"IoMail",
+    component:<IoMail />,
+    link:"mailto:lokeshkumarreddy.c@gmail.com"
+  },
   {
     id:1,
     icon:"FaGithub",
