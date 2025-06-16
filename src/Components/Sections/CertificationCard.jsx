@@ -1,12 +1,13 @@
 import React from "react";
 import { LuArrowUpRight } from "react-icons/lu";
 import useRedirect from "../utils/useRedirect";
+import { heroName, heroposition } from "../utils/data";
 const CertificationCard = ({ certification }) => {
   const redirectTo = useRedirect()
   return (
     <div className="group grid grid-cols-1 md:grid-cols-4 gap-4 py-6 px-2 border-gray-700 hover:bg-teal-200/10 rounded-md cursor-pointer" onClick={()=> redirectTo(certification.homepage)}>
       {/* Timeline */}
-      <img src={certification.image} className="mt-2" alt="certification" />
+      <img src={certification.image} className="mt-2" alt={heroName + " " + heroposition} />
 
       {/* Details */}
       <div className="md:col-span-3 flex flex-col gap-2">
