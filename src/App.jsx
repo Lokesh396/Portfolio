@@ -1,26 +1,22 @@
-import "./styles.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import About from "./components/pages/About";
-import Resume from "./components/pages/Resume";
-import Work from "./components/pages/Work";
-import Contact from "./components/pages/Contact";
-function App() {
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Archivepage from './pages/Archivepage'
+import CursorGradient from '../CursorGradient'
+
+const App = () => {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route path="about" element={<About />}></Route>
-            <Route path="resume" element={<Resume />}></Route>
-            <Route path="work" element={<Work />}></Route>
-            <Route path="contact" element={<Contact />}></Route>
-          </Route>
-          <Route path="*" element={<Home></Home>}></Route>
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
+    <main className='!font-primary relative'>
+      <CursorGradient />
+   <BrowserRouter>
+    <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/archive' element={<Archivepage />} />
+        <Route path ='*' element={<Home />} />
+     </Routes>
+   </BrowserRouter>
+   </main>
+  )
 }
 
-export default App;
+export default App
