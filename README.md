@@ -2,7 +2,7 @@
 
 A clean, fast, and fully customizable developer portfolio built using **React** and **Tailwind CSS** — designed to showcase your skills, experience, and projects professionally.
 
-> 🔗 **Live Preview**: [https://www.lokeshkrportfolio.com/](https://www.lokeshkrportfolio.com/)
+> 🔗 **Live Preview**: [https://lokesh396.github.io/Portfolio/](https://lokesh396.github.io/Portfolio/)
 
 ---
 
@@ -44,6 +44,24 @@ npm run dev
 ```
 
 ##### Update the data.js file inside the utils folder.
+
+---
+
+## 🚀 Deployment (GitHub Pages)
+
+The site is a static SPA served from `https://lokesh396.github.io/Portfolio/` — no server, no Vercel.
+
+- `vite.config.js` sets `base: '/Portfolio/'` so assets resolve from the repo sub-path.
+- `src/App.jsx` mounts `BrowserRouter` with that same base as `basename`.
+- `npm run build` also copies `dist/index.html` to `dist/404.html` (GitHub Pages has no SPA rewrites, so unknown paths — e.g. a refresh on `/Portfolio/archive` — are served the app) and writes `dist/.nojekyll`.
+- `.github/workflows/deploy.yml` builds on every push to `main` and publishes `dist/` via `actions/deploy-pages`.
+
+One-time repo setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**. After that, pushes to `main` deploy automatically.
+
+```bash
+npm run build                        # verify the static output locally
+npx vite preview --base /Portfolio/  # preview at http://localhost:4173/Portfolio/
+```
 
 ---
 

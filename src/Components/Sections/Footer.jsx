@@ -24,7 +24,7 @@ const Footer = () => {
       by yours truly. Built with{" "}
       <LinkText link={"https://react.dev/"} text={"React.js"} /> and{" "}
       <LinkText link={"https://tailwindcss.com/"} text={"Tailwind CSS"} />{" "}
-      deployed with <LinkText link={"https://vercel.com/"} text={"Vercel"} />.
+      deployed with <LinkText link={"https://pages.github.com/"} text={"GitHub Pages"} />.
       All text is set in the <LinkText link={'https://fonts.google.com/specimen/Inter?query=inter'} text={'Inter'} /> typeface.
     </p>
   );
