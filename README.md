@@ -1,80 +1,45 @@
-# ⚡ DevPortfolio – React & Tailwind Developer Portfolio
+# Portfolio — static site
 
-A clean, fast, and fully customizable developer portfolio built using **React** and **Tailwind CSS** — designed to showcase your skills, experience, and projects professionally.
+Personal site for **C Lokesh Kumar Reddy**, Solutions Engineer 2 (Backend) at Setu.
+Served from **https://lokesh396.github.io/Portfolio/**.
 
-> 🔗 **Live Preview**: [https://lokesh396.github.io/Portfolio/](https://lokesh396.github.io/Portfolio/)
+## How it is built
 
----
+Plain HTML, CSS and a little JavaScript. No framework, no bundler, no build step, no
+npm dependencies. `index.html` is self-contained — styles inline in `<style>`, and the
+only script is a scroll-spy for the rail navigation.
 
-## ✨ Features
-
-- 🚀 Built with **React** + **Tailwind CSS**
-- 🎯 Fully **responsive** and **mobile-friendly**
-- ⚡ **Fast performance** and optimized build with Vite
-- 📄 Resume-style layout with **About**, **Skills**, **Experience**, **Projects**, **Certifications** and **Contact**
-- 🧩 Just update a data file — no backend needed
-- 🆓 **MIT licensed**, open to use and modify
-
----
-
-## 📸 Preview
-
-![Portfolio Preview](public/portfolio.png)
-
----
-
-## 🛠️ Tech Stack
-
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Vite](https://vitejs.dev/)
-- [ReactIcons](https://react-icons.github.io/react-icons/)
-
----
-
-## 📦 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/Lokesh396/Portfolio.git
-cd Portfolio
-npm install
-npm run dev
+```
+index.html              the whole site
+favicon.ico             favicon
+lokesh_fullstack.pdf    résumé (linked from the rail)
+design/                 design explorations, not deployed
 ```
 
-##### Update the data.js file inside the utils folder.
+Type: Instrument Serif (display), Instrument Sans (body), JetBrains Mono (metadata),
+loaded from Google Fonts.
 
----
+## Editing
 
-## 🚀 Deployment (GitHub Pages)
+Edit `index.html` directly and push. That is the deploy.
 
-The site is a static SPA served from `https://lokesh396.github.io/Portfolio/` — no server, no Vercel.
+Sections are `<section id="...">` with a matching `<a href="#..." data-sec="...">` in the
+rail nav — add one, add the other, keep the numbers in order.
 
-- `vite.config.js` sets `base: '/Portfolio/'` so assets resolve from the repo sub-path.
-- `src/App.jsx` mounts `BrowserRouter` with that same base as `basename`.
-- `npm run build` also copies `dist/index.html` to `dist/404.html` (GitHub Pages has no SPA rewrites, so unknown paths — e.g. a refresh on `/Portfolio/archive` — are served the app) and writes `dist/.nojekyll`.
-- `.github/workflows/deploy.yml` builds on every push to `main` and publishes `dist/` via `actions/deploy-pages`.
+## Deploy
 
-One-time repo setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**. After that, pushes to `main` deploy automatically.
+GitHub Pages, branch `main`, repo root:
+**Settings → Pages → Source: Deploy from a branch → main / (root)**.
 
-```bash
-npm run build                        # verify the static output locally
-npx vite preview --base /Portfolio/  # preview at http://localhost:4173/Portfolio/
-```
+No workflow, no `dist/`, no `.nojekyll` — the repo *is* the site.
 
----
+## Notes
 
-## 🙏 Credits
+- Internal work is described by shape, not by client: no screenshots, no names, and no
+  figures belonging to a former employer.
+- Muted metadata colour is AA-checked against the background.
 
-This project is **inspired by** [Brittany Chiang’s portfolio](https://brittanychiang.com/), one of the most iconic open-source developer portfolios.
+## Credits
 
-> All design credit goes to **Brittany Chiang** — thank you for making your work open-source and inspiring developers around the world. 🙌
-
----
-
-## 🧑‍💻 Author
-
-**C Lokesh Kumar Reddy**  
-[LinkedIn](https://www.linkedin.com/in/c-lokesh-kumar-reddy-30a5681a1/)  
-[GitHub](https://github.com/Lokesh396)
+Layout follows the typographic résumé one-pager pattern. The earlier React + Vite version
+of this site lives in the git history.

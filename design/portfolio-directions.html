@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio — direction sketch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --gap: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "IBM Plex Sans", system-ui, sans-serif; background: #0b0f14; }
+  .bar { position: sticky; top: 0; z-index: 20; display: flex; gap: 8px; align-items: center;
+    padding: 10px 14px; background: #0b0f14; border-bottom: 1px solid #1e2731; flex-wrap: wrap; }
+  .bar button { font: 500 12px/1 "IBM Plex Mono", monospace; letter-spacing: .04em; text-transform: uppercase;
+    color: #7d8899; background: transparent; border: 1px solid #24303c; padding: 9px 13px; border-radius: 3px; cursor: pointer; }
+  .bar button[aria-selected="true"] { color: #0b0f14; background: #cfe6d5; border-color: #cfe6d5; }
+  .bar .hint { font: 400 11px/1.5 "IBM Plex Mono", monospace; color: #5b6675; margin-left: auto; max-width: 40ch; }
+  .dir { display: none; }
+  .dir.on { display: block; }
+
+  /* ---------- A · signal ---------- */
+  .d-a { --bg:#0b0f14; --ink:#e8ecf1; --mut:#8b96a5; --line:#1e2731; --acc:#8fd694; --card:#101720;
+    background: var(--bg); color: var(--ink); font-family:"IBM Plex Sans", sans-serif; padding: 0 0 56px; }
+  .d-a .wrap { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
+  .d-a .top { display:grid; grid-template-columns: 1.25fr .75fr; gap: 48px; padding: 64px 0 48px; border-bottom:1px solid var(--line); }
+  .d-a .eyebrow { font: 500 11px/1 "IBM Plex Mono", monospace; letter-spacing:.16em; text-transform:uppercase; color: var(--acc); }
+  .d-a h1 { font-size: 46px; line-height:1.04; letter-spacing:-.03em; margin: 16px 0 0; font-weight:600; max-width: 12ch;}
+  .d-a .role { margin-top: 18px; font-size: 17px; color: var(--ink); }
+  .d-a .role span { color: var(--mut); }
+  .d-a .tag { margin-top: 22px; color: var(--mut); font-size: 15px; line-height:1.6; max-width: 46ch; }
+  .d-a .now { border-left: 2px solid var(--acc); padding-left: 14px; }
+  .d-a .now dt { font: 500 10px/1 "IBM Plex Mono", monospace; letter-spacing:.14em; color: var(--mut); text-transform:uppercase; }
+  .d-a .now dd { margin: 10px 0 18px; font-size: 14px; line-height:1.5; }
+  .d-a .now dd b { font-weight: 600; }
+  .d-a .caps { display:flex; flex-wrap:wrap; gap:6px; margin-top:26px; }
+  .d-a .caps i { font-style:normal; font: 500 11px/1 "IBM Plex Mono", monospace; color:#a9b4c2;
+    border:1px solid var(--line); padding:7px 9px; border-radius:2px; background:#0e1520; }
+  .d-a .band { padding: 40px 0 0; }
+  .d-a h2 { font: 500 11px/1 "IBM Plex Mono", monospace; letter-spacing:.16em; text-transform:uppercase;
+    color: var(--mut); margin: 0 0 22px; }
+  .d-a .exp { display:grid; grid-template-columns: 132px 1fr; gap: 0 24px; padding: 20px 0; border-top:1px solid var(--line); }
+  .d-a .exp:last-of-type { border-bottom:1px solid var(--line); }
+  .d-a .exp .when { font: 400 12px/1.7 "IBM Plex Mono", monospace; color: var(--mut); }
+  .d-a .exp h3 { font-size:16px; font-weight:600; margin:0 0 3px; }
+  .d-a .exp .co { color: var(--acc); font-size:13px; }
+  .d-a .exp p { color: var(--mut); font-size:13.5px; line-height:1.6; margin:10px 0 0; max-width: 62ch; }
+  .d-a .proj { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .d-a .p { background: var(--card); border:1px solid var(--line); border-radius:4px; padding:18px; }
+  .d-a .p h4 { margin:0 0 6px; font-size:14.5px; font-weight:600; }
+  .d-a .p p { margin:0; color:var(--mut); font-size:13px; line-height:1.55; }
+
+  /* ---------- B · paper ---------- */
+  .d-b { --paper:#f6f3ec; --ink:#17170f; --mut:#6a675c; --rule:#d5d0c2; --acc:#9a4b12;
+    background: var(--paper); color:var(--ink); font-family:"IBM Plex Sans",sans-serif; padding: 0 0 56px; }
+  .d-b .wrap { max-width: 1040px; margin:0 auto; padding: 0 28px; }
+  .d-b .masthead { display:flex; justify-content:space-between; align-items:baseline; padding: 20px 0;
+    border-bottom: 2px solid var(--ink); font: 500 11px/1 "IBM Plex Mono", monospace; letter-spacing:.12em; text-transform:uppercase; }
+  .d-b .masthead span:last-child { color: var(--mut); letter-spacing:.06em; }
+  .d-b .hero { padding: 52px 0 34px; display:grid; grid-template-columns: 1fr auto; gap:40px; align-items:end; }
+  .d-b h1 { font-family:"Instrument Serif", serif; font-weight:400; font-size: 62px; line-height:.96; letter-spacing:-.015em; margin:0; }
+  .d-b h1 em { font-style:italic; color: var(--acc); }
+  .d-b .kicker { font: 400 13px/1.6 "IBM Plex Mono", monospace; color: var(--mut); text-align:right; max-width: 24ch; }
+  .d-b .lede { font-size: 18px; line-height:1.55; margin: 26px 0 0; max-width: 58ch; text-wrap: pretty; }
+  .d-b .rule { height:1px; background: var(--rule); margin: 34px 0; }
+  .d-b .cols { display:grid; grid-template-columns: 168px 1fr; gap: 28px 40px; }
+  .d-b h2 { font: 500 10px/1 "IBM Plex Mono", monospace; letter-spacing:.16em; text-transform:uppercase; color:var(--mut); margin:0; }
+  .d-b .entry { padding-bottom: 18px; }
+  .d-b .entry h3 { font-family:"Instrument Serif",serif; font-weight:400; font-size:25px; margin:0; letter-spacing:-.01em; }
+  .d-b .entry .meta { font: 400 12px/1.6 "IBM Plex Mono", monospace; color: var(--mut); margin-top:4px; }
+  .d-b .entry .meta b { color: var(--acc); font-weight:500; }
+  .d-b .entry p { font-size: 14.5px; line-height:1.65; margin:10px 0 0; max-width: 66ch; }
+  .d-b .list { border-top:1px solid var(--rule); }
+  .d-b .list li { display:flex; justify-content:space-between; gap:20px; padding:11px 0; border-bottom:1px solid var(--rule);
+    font-size:14px; list-style:none; }
+  .d-b .list { padding:0; margin:0; border-top:none; }
+  .d-b .list b { font-weight:600; }
+  .d-b .list span { color:var(--mut); font: 400 12px/1.5 "IBM Plex Mono", monospace; white-space:nowrap; }
+
+  /* ---------- C · endpoint ---------- */
+  .d-c { --bg:#08090a; --ink:#cfd3d8; --mut:#6f7681; --line:#191c20; --acc:#d8a75b;
+    background:var(--bg); color:var(--ink); font-family:"JetBrains Mono",monospace; padding:0 0 56px; }
+  .d-c .wrap { max-width: 1040px; margin:0 auto; padding: 0 24px; }
+  .d-c .head { display:flex; gap:14px; align-items:center; padding: 16px 0; border-bottom:1px solid var(--line);
+    font-size:12px; color:var(--mut); }
+  .d-c .dot { width:7px; height:7px; border-radius:50%; background:#8fd694; }
+  .d-c .hero { padding: 44px 0 30px; }
+  .d-c .prompt { color:var(--acc); font-size:13px; }
+  .d-c .prompt b { color:#8fd694; font-weight:500; }
+  .d-c h1 { font-size: 30px; line-height:1.25; font-weight:500; margin: 14px 0 0; letter-spacing:-.01em; }
+  .d-c h1 u { text-decoration:none; color:var(--acc); }
+  .d-c .sub { color:var(--mut); font-size:13px; margin-top:12px; line-height:1.8; }
+  .d-c table { width:100%; border-collapse:collapse; font-size:12.5px; margin-top: 30px; }
+  .d-c th { text-align:left; color:var(--mut); font-weight:400; padding: 8px 12px 8px 0; border-bottom:1px solid var(--line);
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase; }
+  .d-c td { padding: 13px 12px 13px 0; border-bottom:1px solid var(--line); vertical-align:top; }
+  .d-c td.m { color:var(--acc); white-space:nowrap; }
+  .d-c td.d { color:var(--mut); }
+  .d-c .verb { font-size:10px; padding:2px 5px; border:1px solid var(--line); color:#8fd694; border-radius:2px; margin-right:8px; }
+  .d-c .block { margin-top: 34px; }
+  .d-c .block > h2 { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--mut); font-weight:400; margin:0 0 14px; }
+  .d-c pre { margin:0; padding:16px; border:1px solid var(--line); border-radius:3px; background:#0b0d0f;
+    font-size:12px; line-height:1.7; overflow-x:auto; color:var(--ink); }
+  .d-c pre .k { color:#8fd694; }
+  .d-c pre .s { color:#d8a75b; }
+  .d-c pre .c { color:#4d535c; }
+
+  @media (max-width: 760px) {
+    .d-a .top, .d-b .hero, .d-b .cols, .d-a .proj { grid-template-columns: 1fr; }
+    .d-a h1 { font-size: 34px; } .d-b h1 { font-size: 40px; } .d-c h1 { font-size: 22px; }
+    .d-b .kicker { text-align:left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bar" role="tablist" aria-label="Design directions">
+  <button role="tab" aria-selected="true"  data-t="a">A · Signal</button>
+  <button role="tab" aria-selected="false" data-t="b">B · Paper</button>
+  <button role="tab" aria-selected="false" data-t="c">C · Endpoint</button>
+  <div class="hint" id="why">Evolution of the current dark theme. Backend credibility, calm.</div>
+</div>
+
+<!-- ================= A ================= -->
+<section class="dir on d-a" id="d-a">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="eyebrow">Solutions Engineer — Backend</div>
+        <h1>C Lokesh Kumar Reddy</h1>
+        <div class="role">Solutions Engineer 2, Backend <span>· Setu</span></div>
+        <p class="tag">I take payment integrations from a spec to a running service — biller systems, legacy migrations, and the tooling that keeps them honest.</p>
+        <div class="caps">
+          <i>Node.js</i><i>Python</i><i>PostgreSQL</i><i>MongoDB</i><i>Redis</i><i>Kafka</i><i>AWS</i><i>GCP</i><i>Serverless</i><i>Event pipelines</i>
+        </div>
+      </div>
+      <dl class="now">
+        <dt>Currently</dt>
+        <dd><b>Setu</b> — Solutions Engineer 2<br>Backend integrations for BBPS biller systems</dd>
+        <dt>Before</dt>
+        <dd><b>Way2News</b> — Junior Software Engineer<br>Ad-tech platform, full stack</dd>
+        <dt>Elsewhere</dt>
+        <dd>GitHub · LinkedIn · Résumé</dd>
+      </dl>
+    </div>
+
+    <div class="band">
+      <h2>Experience</h2>
+      <div class="exp">
+        <div class="when">2026 — Present</div>
+        <div>
+          <h3>Solutions Engineer 2</h3>
+          <div class="co">Setu</div>
+          <p>Backend side of biller integrations: moving legacy services onto the current platform, generating and reconciling against provider specs, and owning the pipelines that prove a migration is correct rather than plausible.</p>
+        </div>
+      </div>
+      <div class="exp">
+        <div class="when">Jun 2023 — 2026</div>
+        <div>
+          <h3>Junior Software Engineer</h3>
+          <div class="co">Way2News</div>
+          <p>Built and scaled an internal ad-tech platform across Sales, B2B, CST and Finance — creative workflows, placement configuration, pricing calculators, reporting dashboards — Node/Express and PostgreSQL/MySQL behind React.</p>
+        </div>
+      </div>
+      <div class="exp">
+        <div class="when">Oct 2022 — Jun 2023</div>
+        <div>
+          <h3>Software Engineer Trainee</h3>
+          <div class="co">Way2News</div>
+          <p>Backend API design, database modelling and UI work on Way2Ads; first production exposure to performance and reliability constraints.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <h2>Selected work</h2>
+      <div class="proj">
+        <div class="p">
+          <h4>BBPS biller migration</h4>
+          <p>Pipeline that converts legacy biller Lambdas onto the current service — parity checks against deployed behaviour, not just "it builds".</p>
+        </div>
+        <div class="p">
+          <h4>Way2News Ads</h4>
+          <p>Multi-role ad management platform: creatives, campaign planning, invoice tracking, automated reporting.</p>
+        </div>
+        <div class="p">
+          <h4>CAM OCR extraction service</h4>
+          <p>Self-hosted document extraction with per-field evidence, built on PaddleOCR-VL readers.</p>
+        </div>
+        <div class="p">
+          <h4>YouTube Shorts automation</h4>
+          <p>End-to-end generation and publishing pipeline — 60K+ views in ten days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= B ================= -->
+<section class="dir d-b" id="d-b">
+  <div class="wrap">
+    <div class="masthead"><span>Lokesh Kumar Reddy</span><span>Solutions Engineer · Backend · Bengaluru</span></div>
+
+    <div class="hero">
+      <div>
+        <h1>C Lokesh<br>Kumar <em>Reddy</em></h1>
+        <p class="lede">Backend engineer working on payment infrastructure at Setu. I migrate legacy biller systems onto the current platform, and I care more about proving a migration is correct than about it merely compiling.</p>
+      </div>
+      <div class="kicker">
+        Currently<br><b>Solutions Engineer 2</b><br>Setu · Backend
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="cols">
+      <h2>Experience</h2>
+      <div>
+        <div class="entry">
+          <h3>Setu</h3>
+          <div class="meta"><b>Solutions Engineer 2, Backend</b> · 2026 — present</div>
+          <p>Biller integrations for BBPS. Rewriting legacy Lambda-based billers into a unified service, with parity proofs against deployed behaviour and staged validation before anything reaches production.</p>
+        </div>
+        <div class="entry">
+          <h3>Way2News</h3>
+          <div class="meta"><b>Junior Software Engineer</b> · Jun 2023 — 2026</div>
+          <p>Core developer on Way2Ads: creatives, placement configuration, pricing and invoicing, live reporting. Full stack across Node/Express and React, with PostgreSQL, MySQL and MongoDB in production.</p>
+        </div>
+        <div class="entry">
+          <h3>Way2News</h3>
+          <div class="meta">Software Engineer Trainee · Oct 2022 — Jun 2023</div>
+          <p>API design, database modelling and interface work on an early version of the ad platform.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="cols">
+      <h2>Selected work</h2>
+      <ul class="list">
+        <li><span><b>BBPS biller migration</b> — legacy Lambdas → unified service, parity-checked</span><span>Setu</span></li>
+        <li><span><b>CAM OCR extraction</b> — per-field evidence from documents</span><span>Setu</span></li>
+        <li><span><b>Way2News Ads</b> — ad-tech platform, 4 business units</span><span>2023</span></li>
+        <li><span><b>YouTube Shorts automation</b> — 60K+ views, 10 days</span><span>2025</span></li>
+        <li><span><b>Knowledge Base</b> — RBAC docs tool with fast search</span><span>2025</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= C ================= -->
+<section class="dir d-c" id="d-c">
+  <div class="wrap">
+    <div class="head"><span class="dot"></span><span>lokesh@setu ~ backend</span></div>
+
+    <div class="hero">
+      <div class="prompt">$ <b>whoami</b> --verbose</div>
+      <h1>C Lokesh Kumar Reddy<br><u>Solutions Engineer 2</u> · Backend @ Setu</h1>
+      <div class="sub">
+        payments · biller integrations · legacy migration<br>
+        node / python / postgres / redis / kafka / aws
+      </div>
+    </div>
+
+    <table>
+      <thead><tr><th>when</th><th>role</th><th>where</th><th>what</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="m">2026 →</td>
+          <td><span class="verb">now</span>Solutions Engineer 2</td>
+          <td class="d">Setu</td>
+          <td class="d">BBPS biller integrations; legacy Lambda billers → unified service, parity-checked against prod</td>
+        </tr>
+        <tr>
+          <td class="m">2023 — 2026</td>
+          <td>Junior Software Engineer</td>
+          <td class="d">Way2News</td>
+          <td class="d">Ad-tech platform: creatives, placements, pricing, invoicing, reporting</td>
+        </tr>
+        <tr>
+          <td class="m">2022 — 2023</td>
+          <td>Software Engineer Trainee</td>
+          <td class="d">Way2News</td>
+          <td class="d">Backend API design, database modelling, UI on Way2Ads</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="block">
+      <h2>GET /projects?featured=true</h2>
+<pre><span class="c">// 200 OK · 4 results</span>
+[
+  { <span class="k">"name"</span>: <span class="s">"bbps-biller-migration"</span>, <span class="k">"org"</span>: <span class="s">"setu"</span>,
+    <span class="k">"note"</span>: <span class="s">"pipeline converts legacy billers; parity proven vs deployed lambda"</span> },
+  { <span class="k">"name"</span>: <span class="s">"cam-ocr-extractor"</span>,  <span class="k">"org"</span>: <span class="s">"setu"</span>,
+    <span class="k">"note"</span>: <span class="s">"document → schema json with per-field evidence"</span> },
+  { <span class="k">"name"</span>: <span class="s">"way2news-ads"</span>,     <span class="k">"org"</span>: <span class="s">"way2news"</span>,
+    <span class="k">"note"</span>: <span class="s">"multi-role ad platform, 4 business units"</span> },
+  { <span class="k">"name"</span>: <span class="s">"shorts-automation"</span>, <span class="k">"org"</span>: <span class="s">"personal"</span>,
+    <span class="k">"note"</span>: <span class="s">"60k+ views in 10 days"</span> }
+]</pre>
+    </div>
+  </div>
+</section>
+
+<script>
+  const whys = {
+    a: "Evolution of the current dark theme. Backend credibility, calm.",
+    b: "Light editorial résumé. Reads like a person, not a template. Best for recruiters skimming on a laptop.",
+    c: "Structured like an API reference. Memorable for backend roles; weakest for non-technical readers."
+  };
+  document.querySelectorAll('.bar button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.bar button').forEach(x => x.setAttribute('aria-selected', String(x === b)));
+    document.querySelectorAll('.dir').forEach(d => d.classList.toggle('on', d.id === 'd-' + b.dataset.t));
+    document.getElementById('why').textContent = whys[b.dataset.t];
+  }));
+</script>
+</body>
+</html>

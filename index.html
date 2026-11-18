@@ -1,50 +1,391 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="%BASE_URL%favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>C Lokesh Kumar Reddy — Solutions Engineer, Backend</title>
+<meta name="description" content="Lokesh Kumar Reddy — backend engineer, Solutions Engineer 2 at Setu. Services, data models, and platforms that have to keep working." />
+<meta name="theme-color" content="#0a0c0d" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="canonical" href="https://lokesh396.github.io/Portfolio/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="C Lokesh Kumar Reddy — Backend Engineer" />
+<meta property="og:description" content="Solutions Engineer 2, Backend at Setu. Services, data models, and platforms that have to keep working." />
+<meta property="og:url" content="https://lokesh396.github.io/Portfolio/" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="C Lokesh Kumar Reddy — Backend Engineer" />
+<meta name="twitter:description" content="Solutions Engineer 2, Backend at Setu." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0c0d;
+    --panel:#0d1011;
+    --ink:#e9e6df;
+    --mut:#93938c;
+    --dim:#8a8b85;
+    --line:#1e2324;
+    --line-soft:#171b1c;
+    --acc:#a8cfa9;
+    --acc-dim:#82a684;
+    --rail:290px;
+    --gutter:56px;
+    --sans:"Instrument Sans",system-ui,-apple-system,sans-serif;
+    --serif:"Instrument Serif",Georgia,serif;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--sans);font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--acc);color:#0a0c0d}
 
-    <!-- Primary Meta Tags -->
-    <title>C Lokesh Kumar Reddy | Full Stack Developer (React, Node.js, Python)</title>
-    <meta name="description" content="Lokesh Kumar Reddy – Full Stack Developer experienced in React, Node.js, and Python Flask. View projects, resume, and contact details.">
+  .shell{
+    max-width:1180px;margin:0 auto;padding:0 32px;
+    display:grid;grid-template-columns:var(--rail) 1fr;column-gap:var(--gutter);
+  }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="C Lokesh Kumar Reddy | Full Stack Developer" />
-    <meta property="og:description" content="Explore portfolio of Lokesh Kumar Reddy - Projects, Resume, Contact." />
-    <meta property="og:image" content="https://lokesh396.github.io/Portfolio/portfolio.png" />
-    <meta property="og:url" content="https://lokesh396.github.io/Portfolio/" />
+  /* ---------- rail ---------- */
+  .rail{
+    position:sticky;top:0;align-self:start;
+    height:100vh;max-height:100vh;
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:64px 0 48px;
+  }
+  .name{
+    font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.02;
+    letter-spacing:-.01em;margin:0;max-width:9ch;
+  }
+  .name em{font-style:italic;color:var(--acc)}
+  .role{
+    margin:18px 0 0;font-size:15px;color:var(--ink);
+    display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;
+  }
+  .role .dot{width:6px;height:6px;border-radius:50%;background:var(--acc);flex:none;transform:translateY(-2px)}
+  .role span.co{color:var(--mut)}
+  .where{margin:6px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="C Lokesh Kumar Reddy | Full Stack Developer" />
-    <meta name="twitter:description" content="React, Node.js, Flask Developer. Explore resume and projects." />
-    <meta name="twitter:image" content="https://lokesh396.github.io/Portfolio/portfolio.png" />
+  nav{margin-top:48px}
+  nav a{
+    display:flex;align-items:center;gap:12px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--dim);padding:9px 0;transition:color .18s ease;
+  }
+  nav a .num{color:var(--line);transition:color .18s ease}
+  nav a .bar{height:1px;width:26px;background:var(--line);transition:width .22s ease,background .22s ease}
+  nav a:hover,nav a:focus-visible{color:var(--ink)}
+  nav a:hover .bar{width:44px;background:var(--mut)}
+  nav a[aria-current="true"]{color:var(--acc)}
+  nav a[aria-current="true"] .num{color:var(--acc-dim)}
+  nav a[aria-current="true"] .bar{width:44px;background:var(--acc)}
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://lokesh396.github.io/Portfolio/" />
+  .rail-foot{display:flex;flex-direction:column;gap:14px}
+  .rail-foot .links{display:flex;gap:6px;flex-wrap:wrap}
+  .rail-foot a{
+    font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--mut);border-bottom:1px solid var(--line);padding:3px 1px;
+    transition:color .18s ease,border-color .18s ease;
+  }
+  .rail-foot a:hover,.rail-foot a:focus-visible{color:var(--acc);border-color:var(--acc-dim)}
 
-    <!-- Optional: JSON-LD Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "Person",
-        "name": "C Lokesh Kumar Reddy",
-        "jobTitle": "Full Stack Developer",
-        "url": "https://lokesh396.github.io/Portfolio/",
-        "sameAs": [
-          "https://github.com/Lokesh396",
-          "https://www.linkedin.com/in/c-lokesh-kumar-reddy-30a5681a1/"
-        ]
-      }
-    </script>
-    <h1 class="hidden">Hi, I'm Lokesh — Full Stack Developer specializing in React & Node.js</h1>
+  /* ---------- content ---------- */
+  main{padding:64px 0 72px;border-left:1px solid var(--line-soft);padding-left:var(--gutter)}
+  section{padding:0 0 4px;scroll-margin-top:48px}
+  section + section{margin-top:64px;padding-top:56px;border-top:1px solid var(--line-soft)}
+  .label{
+    display:flex;align-items:baseline;gap:14px;margin:0 0 30px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);
+  }
+  .label .n{color:var(--acc-dim)}
 
-  </head>
+  /* intro */
+  .lede{
+    font-family:var(--serif);font-size:31px;line-height:1.32;letter-spacing:-.005em;
+    margin:0;max-width:27ch;text-wrap:pretty;
+  }
+  .lede b{font-weight:400;color:var(--acc);font-style:italic}
+  .body-copy{color:var(--mut);max-width:60ch;font-size:16px;margin:26px 0 0;text-wrap:pretty}
+  .body-copy strong{color:var(--ink);font-weight:500}
 
-  <body>
-    <div id="root" class="bg-slate-900"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  /* experience */
+  .job{
+    display:grid;grid-template-columns:132px 1fr;gap:0 28px;
+    padding:22px 0;border-top:1px solid var(--line-soft);
+  }
+  .job:first-of-type{border-top:none;padding-top:0}
+  .job:last-of-type{padding-bottom:0}
+  .job .when{font-family:var(--mono);font-size:11.5px;color:var(--dim);letter-spacing:.02em;padding-top:5px;white-space:nowrap}
+  .job h3{margin:0;font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.35}
+  .job .org{color:var(--acc);font-size:14px;margin-top:2px}
+  .job .org em{font-style:normal;color:var(--dim);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-left:8px}
+  .job p{margin:10px 0 0;color:var(--mut);font-size:14.5px;line-height:1.65;max-width:62ch;text-wrap:pretty}
+
+  /* project index */
+  .index{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .index li{border-bottom:1px solid var(--line)}
+  .index .row{
+    display:grid;grid-template-columns:1fr auto;gap:10px 20px;align-items:baseline;
+    padding:18px 14px 18px 0;position:relative;
+  }
+  .index a.row{padding-left:14px;margin-left:-14px;border-radius:2px;transition:background .2s ease}
+  .index a.row:hover,.index a.row:focus-visible{background:var(--panel)}
+  .index .row .title{font-size:16.5px;font-weight:500;letter-spacing:-.005em;display:flex;align-items:center;gap:10px}
+  .index .row .title .arrow{color:var(--acc);opacity:0;transform:translateX(-4px);transition:opacity .18s ease,transform .18s ease;font-size:14px}
+  .index a.row:hover .arrow,.index a.row:focus-visible .arrow{opacity:1;transform:translateX(0)}
+  .index .row .yr{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.04em;white-space:nowrap;padding-top:4px}
+  .index .row .desc{grid-column:1/2;color:var(--mut);font-size:14px;line-height:1.6;margin:0;max-width:60ch}
+  .index .row .stack{
+    grid-column:1/-1;display:flex;flex-wrap:wrap;gap:5px;margin-top:2px;
+  }
+  .index .stack span{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--dim);
+    border:1px solid var(--line);padding:3px 6px;border-radius:2px;
+  }
+  .note{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.03em;margin:18px 0 0}
+
+  /* stack groups */
+  .stackgrid{display:grid;grid-template-columns:150px 1fr;gap:0 28px}
+  .stackgrid dt{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--dim);padding:16px 0;border-top:1px solid var(--line-soft);
+  }
+  .stackgrid dd{
+    margin:0;padding:16px 0;border-top:1px solid var(--line-soft);
+    display:flex;flex-wrap:wrap;gap:6px;font-size:14px;color:var(--ink);
+  }
+  .stackgrid dd i{
+    font-style:normal;color:var(--mut);background:var(--panel);border:1px solid var(--line-soft);
+    padding:3px 8px;border-radius:2px;font-size:13px;
+  }
+
+  /* contact */
+  .contact-line{
+    font-family:var(--serif);font-size:29px;line-height:1.35;margin:0 0 22px;max-width:26ch;text-wrap:pretty;
+  }
+  .contact-line em{font-style:italic;color:var(--acc)}
+  .mailto{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:13px;letter-spacing:.02em;
+    border:1px solid var(--line);padding:12px 16px;border-radius:2px;color:var(--ink);
+    transition:border-color .2s ease,color .2s ease,background .2s ease;
+  }
+  .mailto:hover,.mailto:focus-visible{border-color:var(--acc-dim);color:var(--acc);background:var(--panel)}
+  .mailto .k{color:var(--dim);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+  footer{
+    grid-column:1/-1;border-top:1px solid var(--line-soft);margin-top:64px;padding:22px 0 0;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);
+  }
+
+  :focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2px}
+
+  @media (max-width:900px){
+    :root{--gutter:32px}
+    .shell{grid-template-columns:1fr;padding:0 22px}
+    .rail{position:static;height:auto;max-height:none;padding:48px 0 32px}
+    main{border-left:none;padding-left:0;padding-top:8px}
+    nav{margin-top:26px;display:flex;flex-wrap:wrap;gap:0 22px}
+    nav a{padding:7px 0}
+    nav a .bar{display:none}
+    .rail-foot{margin-top:26px;flex-direction:row;justify-content:space-between;align-items:center}
+    .lede{font-size:25px}
+    .job{grid-template-columns:1fr;gap:6px}
+    .job .when{padding-top:0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important;animation:none!important}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <aside class="rail">
+    <div>
+      <h1 class="name">C Lokesh<br>Kumar <em>Reddy</em></h1>
+      <p class="role"><span class="dot" aria-hidden="true"></span>Solutions Engineer 2 · Backend<span class="co">@ Setu</span></p>
+      <p class="where">Bengaluru, IN</p>
+
+      <nav aria-label="Sections">
+        <a href="#about" data-sec="about"><span class="bar" aria-hidden="true"></span><span class="num">01</span>About</a>
+        <a href="#experience" data-sec="experience"><span class="bar" aria-hidden="true"></span><span class="num">02</span>Experience</a>
+        <a href="#work" data-sec="work"><span class="bar" aria-hidden="true"></span><span class="num">03</span>Work</a>
+        <a href="#stack" data-sec="stack"><span class="bar" aria-hidden="true"></span><span class="num">04</span>Stack</a>
+        <a href="#contact" data-sec="contact"><span class="bar" aria-hidden="true"></span><span class="num">05</span>Contact</a>
+      </nav>
+    </div>
+
+    <div class="rail-foot">
+      <div class="links">
+        <a href="mailto:lokeshkumarreddy.c@gmail.com">Mail</a>
+        <a href="https://www.linkedin.com/in/c-lokesh-kumar-reddy-30a5681a1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="lokesh_fullstack.pdf" target="_blank" rel="noopener noreferrer">Résumé</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <section id="about">
+      <p class="label"><span class="n">01</span>About</p>
+      <p class="lede">I&rsquo;m a backend engineer. I care about the part where the system has to hold up &mdash; <b>the data model, the failure case, the change that can&rsquo;t break what&rsquo;s in production.</b></p>
+      <p class="body-copy">
+        I write backend services at <strong>Setu</strong>, where my title is Solutions Engineer 2 &mdash; the title leans
+        toward solutions, the work is still software. Before that, close to four years at <strong>Way2News</strong>
+        building internal platforms from the schema up &mdash; Node and Express across Postgres, MySQL and MongoDB,
+        with React on top when the job needed a screen.
+      </p>
+    </section>
+
+    <section id="experience">
+      <p class="label"><span class="n">02</span>Experience</p>
+
+      <article class="job">
+        <div class="when">Aug 2026 — Now</div>
+        <div>
+          <h3>Solutions Engineer 2, Backend</h3>
+          <p class="org">Setu</p>
+          <p>Backend engineering on the solutions team.</p>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Apr 2026 — Jun 2026</div>
+        <div>
+          <h3>Senior Software Engineer</h3>
+          <p class="org">Way2News</p>
+          <p>Senior ownership on the same platforms: designing the pieces other engineers built against, and keeping
+             the services behind them consistent through the handover.</p>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Jun 2023 — Apr 2026</div>
+        <div>
+          <h3>Junior Software Engineer</h3>
+          <p class="org">Way2News</p>
+          <p>Core developer on an internal ad platform used daily by Sales, B2B, CST and Finance — pricing and
+             placement rules, invoicing, and the reporting those teams plan around. I owned the data model and the
+             reporting path, and kept the cron-driven sync jobs behind them alive. Node and Express over Postgres,
+             MySQL and MongoDB; React and Tailwind on the front end.</p>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Oct 2022 — Jun 2023</div>
+        <div>
+          <h3>Software Engineer Trainee</h3>
+          <p class="org">Way2News</p>
+          <p>API design, database modelling and interface work on the same ad platforms. First taste of production constraints.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="work">
+      <p class="label"><span class="n">03</span>Selected work</p>
+      <ul class="index">
+        <li>
+          <div class="row">
+            <div class="title">Ad-tech internal platform</div>
+            <span class="yr">2023 — 26</span>
+            <p class="desc">Campaign planning, creative workflows and reporting for four business units — Sales, B2B, CST and Finance. Internal.</p>
+            <div class="stack"><span>Node</span><span>PostgreSQL</span><span>React</span><span>MongoDB</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="title">CRM &amp; reporting suite</div>
+            <span class="yr">2024 — 26</span>
+            <p class="desc">Invoice tracking, revenue reporting and the campaign operations the sales teams ran on. Internal.</p>
+            <div class="stack"><span>Express</span><span>MySQL</span><span>Redis</span><span>Charts</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="title">Document extraction service</div>
+            <span class="yr">2026</span>
+            <p class="desc">Self-hosted OCR pipeline that returns structured fields with per-field evidence rather than a wall of text. Internal.</p>
+            <div class="stack"><span>Python</span><span>OCR</span><span>FastAPI</span><span>Docker</span></div>
+          </div>
+        </li>
+        <li>
+          <a class="row" href="https://github.com/Lokesh396/Knowledgebase" target="_blank" rel="noopener noreferrer">
+            <div class="title">Knowledge base <span class="arrow" aria-hidden="true">↗</span></div>
+            <span class="yr">2025</span>
+            <p class="desc">Team documentation with role-based access, file management and fast search.</p>
+            <div class="stack"><span>React</span><span>Appwrite</span><span>Tailwind</span></div>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="https://github.com/Lokesh396/youtube-video-automation" target="_blank" rel="noopener noreferrer">
+            <div class="title">Shorts automation <span class="arrow" aria-hidden="true">↗</span></div>
+            <span class="yr">2025</span>
+            <p class="desc">Generation-to-publish pipeline for short videos — 60K+ views in ten days.</p>
+            <div class="stack"><span>Python</span><span>moviepy</span><span>MongoDB</span></div>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="https://github.com/Lokesh396/Portfolio" target="_blank" rel="noopener noreferrer">
+            <div class="title">This site <span class="arrow" aria-hidden="true">↗</span></div>
+            <span class="yr">2026</span>
+            <p class="desc">Vite and React, deployed to GitHub Pages. The whole thing is one data file.</p>
+            <div class="stack"><span>React</span><span>Vite</span><span>GitHub Pages</span></div>
+          </a>
+        </li>
+      </ul>
+      <p class="note">Internal work is described by shape, not by client — no screenshots, no data.</p>
+    </section>
+
+    <section id="stack">
+      <p class="label"><span class="n">04</span>Stack</p>
+      <dl class="stackgrid">
+        <dt>Backend</dt>
+        <dd><i>Node.js</i><i>Express</i><i>Python</i><i>FastAPI</i><i>Flask</i></dd>
+        <dt>Data</dt>
+        <dd><i>PostgreSQL</i><i>MySQL</i><i>MongoDB</i><i>Redis</i><i>Kafka</i></dd>
+        <dt>Cloud &amp; infra</dt>
+        <dd><i>AWS</i><i>Lambda</i><i>S3</i><i>GCP</i><i>Docker</i><i>Serverless</i></dd>
+        <dt>Frontend</dt>
+        <dd><i>React</i><i>Tailwind</i><i>Vite</i></dd>
+        <dt>Practice</dt>
+        <dd><i>API design</i><i>Migrations</i><i>Parity testing</i><i>Code review</i></dd>
+      </dl>
+    </section>
+
+    <section id="contact">
+      <p class="label"><span class="n">05</span>Contact</p>
+      <p class="contact-line">Happy to talk about backend systems, data models, or <em>anything that has to keep working.</em></p>
+      <a class="mailto" href="mailto:lokeshkumarreddy.c@gmail.com"><span class="k">Mail</span>lokeshkumarreddy.c@gmail.com</a>
+    </section>
+
+    <footer>
+      <span>C Lokesh Kumar Reddy</span>
+      <span>Built with React &amp; Tailwind · GitHub Pages</span>
+    </footer>
+  </main>
+</div>
+
+<script>
+  // reading progress in the rail nav — cheap, no library
+  const links = [...document.querySelectorAll('nav a[data-sec]')];
+  const secs = links.map(a => document.getElementById(a.dataset.sec)).filter(Boolean);
+  const set = id => links.forEach(a => a.setAttribute('aria-current', String(a.dataset.sec === id)));
+  if ('IntersectionObserver' in window) {
+    const seen = new Map();
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => seen.set(e.target.id, e.isIntersecting ? e.intersectionRatio : 0));
+      let best = null, bestVal = 0;
+      seen.forEach((v, k) => { if (v >= bestVal) { bestVal = v; best = k; } });
+      if (best) set(best);
+    }, { rootMargin: '-20% 0px -55% 0px', threshold: [0, .25, .5, 1] });
+    secs.forEach(s => io.observe(s));
+    set(secs[0].id);
+  }
+</script>
+</body>
 </html>
